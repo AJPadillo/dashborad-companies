@@ -1,5 +1,6 @@
+import { CardSummaryProps } from "./CardSummary.types";
 
-export function CardSummary() {
+export function CardSummary(props: CardSummaryProps) {
     return (
         <div>CardSummary</div>
     )
