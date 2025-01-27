@@ -1,4 +1,4 @@
-import { CustomIcon } from "../CustomIcon";
+import { CustomIcon } from "@/components/CustomIcon";
 import { CardSummaryProps } from "./CardSummary.types";
 
 export function CardSummary(props: CardSummaryProps) {
