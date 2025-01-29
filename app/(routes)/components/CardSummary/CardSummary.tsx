@@ -1,6 +1,7 @@
 import { CustomIcon } from "@/components/CustomIcon";
 import { CardSummaryProps } from "./CardSummary.types";
 import { CustomTooltip } from "@/components/CustomTooltip";
+import { cn } from "@/lib/utils";
 
 export function CardSummary(props: CardSummaryProps) {
     const { average, icon: Icon, title, tooltipText, total } = props;
@@ -11,10 +12,16 @@ export function CardSummary(props: CardSummaryProps) {
                     <CustomIcon icon={Icon} />
                     {title}
                 </div>
+                <CustomTooltip
+                    content={tooltipText}
+                />
             </div>
-            <CustomTooltip
-                content={tooltipText}
-            />
+            <div className="flex gap-4 mt-2 md:mt-4">
+                <p className="text-2xl">{total}</p>
+                <div className={cn('flex items-center gap-1 px-2 text-xs text-white rounded-lg h-[20px] bg-black dark:bg-secondary')}>
+                    {average}%
+                </div>
+            </div>
         </div>
     )
 }
