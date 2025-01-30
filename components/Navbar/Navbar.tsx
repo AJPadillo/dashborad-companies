@@ -1,7 +1,7 @@
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { UserButton } from "@clerk/nextjs"
-import { Menu } from "lucide-react"
+import { Menu, Search } from "lucide-react"
 
 export function Navbar() {
     return (
@@ -15,6 +15,14 @@ export function Navbar() {
                         <p>Sidebar Routes</p>
                     </SheetContent>
                 </Sheet>
+            </div>
+            <div className="relative w-[300px]">
+                <Input placeholder="Search..." className="rounded-lg" />
+                <Search strokeWidth={1} className="absolute top-2 right-2" />
+            </div>
+            <div className="flex gap-x-2 items-center">
+                <p>ToogleTheme</p>
+                <UserButton />
             </div>
         </div>
     )
