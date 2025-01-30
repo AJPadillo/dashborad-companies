@@ -1,3 +1,4 @@
+import { Navbar } from "@/components/Navbar"
 
 export default function LayoutDashboard({ children }: { children: React.ReactElement }) {
     return (
@@ -6,7 +7,7 @@ export default function LayoutDashboard({ children }: { children: React.ReactEle
                 Sidebar
             </div>
             <div className="w-full xl:ml-80">
-                <p>Navbar</p>
+                <Navbar />
                 <div className="p-6 bg-[#fafbfc] dark:bg-secondary">
                     {children}
                 </div>
