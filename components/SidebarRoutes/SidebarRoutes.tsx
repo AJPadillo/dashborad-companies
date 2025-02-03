@@ -4,6 +4,7 @@ import { dataGeneralSidebar, dataSupportSidebar, dataToolsSidebar } from './Side
 import { Button } from '../ui/button'
 
 export function SidebarRoutes() {
+    const currentYear = new Date().getFullYear();
     return (
         <div className='flex flex-col justify-between h-full'>
             <div>
@@ -41,7 +42,7 @@ export function SidebarRoutes() {
 
                 <Separator />
 
-                <footer className='mt-3 p-3 text-center'> 2025, All rights reserved</footer>
+                <footer className='mt-3 p-3 text-center'> {currentYear}, All rights reserved</footer>
             </div>
         </div>
     )
