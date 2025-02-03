@@ -38,6 +38,10 @@ export function SidebarRoutes() {
                         Upgrade Plan
                     </Button>
                 </div>
+
+                <Separator />
+
+                <footer className='mt-3 p-3 text-center'> 2025, All rights reserved</footer>
             </div>
         </div>
     )
