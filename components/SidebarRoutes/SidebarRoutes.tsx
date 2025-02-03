@@ -1,4 +1,5 @@
 import { SidebarItem } from '../SidebarItem'
+import { Separator } from '@/components/ui/separator'
 import { dataGeneralSidebar, dataSupportSidebar, dataToolsSidebar } from './SidebarRoutes.data'
 
 export function SidebarRoutes() {
@@ -8,6 +9,14 @@ export function SidebarRoutes() {
                 <div className='p-2 md:p-6'>
                     <p>GENERAL</p>
                     {dataGeneralSidebar.map((item) => (
+                        <SidebarItem key={item.label} item={item} />
+                    ))}
+                </div>
+                <Separator />
+
+                <div className='p-2 md:p-6'>
+                    <p>SUPPORT</p>
+                    {dataSupportSidebar.map((item) => (
                         <SidebarItem key={item.label} item={item} />
                     ))}
                 </div>
