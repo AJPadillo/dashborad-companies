@@ -1,6 +1,7 @@
 import { SidebarItem } from '../SidebarItem'
 import { Separator } from '@/components/ui/separator'
 import { dataGeneralSidebar, dataSupportSidebar, dataToolsSidebar } from './SidebarRoutes.data'
+import { Button } from '../ui/button'
 
 export function SidebarRoutes() {
     return (
@@ -29,6 +30,13 @@ export function SidebarRoutes() {
                     {dataSupportSidebar.map((item) => (
                         <SidebarItem key={item.label} item={item} />
                     ))}
+                </div>
+            </div>
+            <div>
+                <div className='text-center p-6'>
+                    <Button variant="outline" className='w-full'>
+                        Upgrade Plan
+                    </Button>
                 </div>
             </div>
         </div>
