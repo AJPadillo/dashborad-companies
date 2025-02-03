@@ -1,3 +1,4 @@
+import { SidebarItem } from '../SidebarItem'
 import { dataGeneralSidebar, dataSupportSidebar, dataToolsSidebar } from './SidebarRoutes.data'
 
 export function SidebarRoutes() {
@@ -7,7 +8,7 @@ export function SidebarRoutes() {
                 <div className='p-2 md:p-6'>
                     <p>GENERAL</p>
                     {dataGeneralSidebar.map((item) => (
-                        <p key={item.label}>{item.label}</p>
+                        <SidebarItem key={item.label} item={item} />
                     ))}
                 </div>
             </div>
