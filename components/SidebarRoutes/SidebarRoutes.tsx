@@ -1,7 +1,11 @@
-import { SidebarItem } from '../SidebarItem'
+"use client";
+
 import { Separator } from '@/components/ui/separator'
+import { Button } from '@/components/ui/button'
+
+import { SidebarItem } from '../SidebarItem'
+
 import { dataGeneralSidebar, dataSupportSidebar, dataToolsSidebar } from './SidebarRoutes.data'
-import { Button } from '../ui/button'
 
 export function SidebarRoutes() {
     const currentYear = new Date().getFullYear();
