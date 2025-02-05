@@ -16,10 +16,20 @@ export function GraphicSuscribers() {
                 <p className="text-slate-500">338 increased</p>
             </div>
             <div className="h-[350px]">
-        <ResponsiveContainer width="100%" height="100%">
-            <AreaChart width={730} height={250} data={dataGraphics} margin={{top: 10, right: 30, left: 0, bottom: 0}}>
-            </AreaChart>
-        </ResponsiveContainer>
+                <ResponsiveContainer width="100%" height="100%">
+                    <AreaChart width={730} height={250} data={dataGraphics} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+                        <defs>
+                            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="5%" stopColor="#887CFD" stopOpacity={0.8}/>
+                                <stop offset="95%" stopColor="#887CFD" stopOpacity={0}/>
+                            </linearGradient>
+                            <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8}/>
+                                <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
+                            </linearGradient>
+                        </defs>
+                    </AreaChart>
+                </ResponsiveContainer>
             </div>
         </div>
     )
