@@ -9,6 +9,9 @@ export function LastCustomers() {
                 <CustomIcon icon={Building} />
                 <p className="text-xl">LastCustomers</p>
             </div>
+            <div>
+                <p>Customer Table</p>
+            </div>
         </div>
     )
 }
