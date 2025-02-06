@@ -44,6 +44,20 @@ const data: TableIntegrationsProps[] = [
         type: "Finance",
         rate: 60,
         profit: 450
+    },
+    {
+        app: "Zapier",
+        icon: "/images/zapier.png",
+        type: "CRM",
+        rate: 20,
+        profit: 144.5
+    },
+    {
+        app: "Shopify",
+        icon: "/images/shopify.png",
+        type: "Marketplace",
+        rate: 70,
+        profit: 766.33
     }
 ]
 
