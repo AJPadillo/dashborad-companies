@@ -1,6 +1,13 @@
+import { CustomIcon } from "@/components/CustomIcon"
+import { List } from "lucide-react"
 
 export function ListIntegrations() {
     return (
-        <div>ListInt</div>
+        <div className="shadow-sm bg-background rounded-ls p-5 flex-1">
+            <div className="flex gap-x-2 items-center">
+                <CustomIcon icon={List} />
+                <p className="text-xl">List of integrations</p>
+            </div>
+        </div>
     )
 }
