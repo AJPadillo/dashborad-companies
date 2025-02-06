@@ -35,6 +35,9 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import { TableIntegrationsProps } from "./TableIntegrations.types"
+import Image from "next/image"
+import { Progress } from "@/components/ui/progress"
+import { formatPrice } from "@/lib/formatPrice"
 
 
 const data: TableIntegrationsProps[] = [
@@ -59,6 +62,56 @@ const data: TableIntegrationsProps[] = [
         rate: 70,
         profit: 766.33
     }
+]
+
+export const columns: ColumnDef<TableIntegrationsProps>[] = [
+    {
+        id: "icon",
+        header: "LOGO",
+        cell: ({ row }) => (
+            <div className="capitalize">
+                <Image src={row.getValue("icon")} alt="Logo" width={20} height={20} />
+            </div>
+        ),
+    },
+    {
+        accessorKey: "app",
+        header: "APPLICATION",
+        cell: ({ row }) => (
+            <div className="capitalize">{row.getValue("app")}</div>
+        ),
+    },
+    {
+        accessorKey: "type",
+        header: () => <div className="text-right">RATE</div>,
+        cell: ({ row }) => <div className="capitalize">{row.getValue("type")}</div>,
+    },
+    {
+        accessorKey: "rate",
+        header: () => <div className="text-right">RATE</div>,
+        cell: ({ row }) => (
+            <div className="text-right font-medium flex gap-1 items-center">
+                <Progress value={row.getValue("rate")} className="h-2" />
+            </div>
+        )
+    },
+    {
+        id: "profit",
+        header: ({ column }) => (
+            <Button variant="ghost" className="float-end px-0" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
+                PROFIT
+                <ChevronUp className="ml-2 h-4 w-4" />
+            </Button>
+        ),
+        cell: ({ row }) => {
+            const amount = parseFloat(row.getValue("profit"))
+            return (
+                <div className="text-right font-medium">
+                    {formatPrice(amount)}
+                </div>
+            )
+        },
+    },
 ]
 
 export function TableIntegrations() {
