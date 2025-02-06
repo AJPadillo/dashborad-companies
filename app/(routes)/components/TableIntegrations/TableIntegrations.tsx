@@ -115,6 +115,13 @@ export const columns: ColumnDef<TableIntegrationsProps>[] = [
 ]
 
 export function TableIntegrations() {
+    const [sorting, setSorting] = React.useState<SortingState>([])
+    const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
+        []
+    )
+    const [columnVisibility, setColumnVisibility] =
+        React.useState<VisibilityState>({})
+    const [rowSelection, setRowSelection] = React.useState({})
     return (
         <div>
 
