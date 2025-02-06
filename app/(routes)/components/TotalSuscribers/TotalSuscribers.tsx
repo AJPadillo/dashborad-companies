@@ -6,7 +6,6 @@ import { ResponsiveContainer, PieChart, Pie, Tooltip, Legend } from "recharts";
 import { CustomIcon } from "@/components/CustomIcon";
 import { dataTotalSuscribers } from "./TotalSuscribers.data";
 
-
 export function TotalSuscribers() {
     return (
         <div className="mb-4 lg:mb-0 shadow-sm bg-background rounded-lg p-5 w-full md:w-96 hover:shadow-lg transition">
