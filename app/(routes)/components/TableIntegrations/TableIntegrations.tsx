@@ -1,7 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { ArrowUpDown, ChevronUp, ChevronDown, MoreHorizontal } from "lucide-react"
+import Image from "next/image"
+import { ChevronUp } from "lucide-react"
+
 import {
     ColumnDef,
     ColumnFiltersState,
@@ -17,16 +19,6 @@ import {
 
 import { Button } from "@/components/ui/button"
 import {
-    DropdownMenu,
-    DropdownMenuCheckboxItem,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
-import {
     Table,
     TableBody,
     TableCell,
@@ -34,11 +26,11 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
-import { TableIntegrationsProps } from "./TableIntegrations.types"
-import Image from "next/image"
 import { Progress } from "@/components/ui/progress"
+
 import { formatPrice } from "@/lib/formatPrice"
 
+import { TableIntegrationsProps } from "./TableIntegrations.types"
 
 const data: TableIntegrationsProps[] = [
     {
