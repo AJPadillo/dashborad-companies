@@ -96,7 +96,7 @@ export const columns: ColumnDef<TableIntegrationsProps>[] = [
         )
     },
     {
-        id: "profit",
+        accessorKey: "profit",
         header: ({ column }) => (
             <Button variant="ghost" className="float-end px-0" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
                 PROFIT
