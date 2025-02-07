@@ -66,7 +66,7 @@ const data: TableIntegrationsProps[] = [
 
 export const columns: ColumnDef<TableIntegrationsProps>[] = [
     {
-        id: "icon",
+        accessorKey: "icon",
         header: "LOGO",
         cell: ({ row }) => (
             <div className="capitalize">
@@ -83,7 +83,7 @@ export const columns: ColumnDef<TableIntegrationsProps>[] = [
     },
     {
         accessorKey: "type",
-        header: () => <div className="text-right">RATE</div>,
+        header: () => <div>TYPE</div>,
         cell: ({ row }) => <div className="capitalize">{row.getValue("type")}</div>,
     },
     {
@@ -156,7 +156,7 @@ export function TableIntegrations() {
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Button variant="outline" className="ml-auto">
-                            Columns <ChevronDown />
+                            Columns
                         </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
