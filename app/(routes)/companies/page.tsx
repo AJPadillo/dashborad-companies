@@ -1,7 +1,10 @@
+import { HeaderCompanies } from "./components/HeaderCompanies";
+
 export default function CompaniesPage() {
     return (
         <div>
-            <h1>Companies Page</h1>
+            <HeaderCompanies />
+            <p>List Companies</p>
         </div>
     );
 }
