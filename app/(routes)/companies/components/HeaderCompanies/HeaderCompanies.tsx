@@ -13,6 +13,7 @@ import {
 import { CirclePlus } from "lucide-react"
 
 import { useState } from "react"
+import { FormCreateCustomer } from "../FormCreateCustomer"
 
 export function HeaderCompanies() {
     const [openModalCreate, setOpenModalCreate] = useState(false)
@@ -29,6 +30,8 @@ export function HeaderCompanies() {
                         <DialogTitle>Create Company</DialogTitle>
                         <DialogDescription>Fill the form below to create a new company</DialogDescription>
                     </DialogHeader>
+
+                    <FormCreateCustomer />
                 </DialogContent>
             </Dialog>
         </div>
