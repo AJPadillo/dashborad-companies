@@ -17,8 +17,20 @@ import { useState } from "react"
 export function HeaderCompanies() {
     const [openModalCreate, setOpenModalCreate] = useState(false)
     return (
-        <div>
-            HeaderCompanies
+        <div className="flex justify-between items-center">
+            <h2 className="text-2xl">List of companies</h2>
+
+            <Dialog open={openModalCreate} onOpenChange={setOpenModalCreate}>
+                <DialogTrigger asChild>
+                    <Button>Create Company</Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[625px]">
+                    <DialogHeader>
+                        <DialogTitle>Create Company</DialogTitle>
+                        <DialogDescription>Fill the form below to create a new company</DialogDescription>
+                    </DialogHeader>
+                </DialogContent>
+            </Dialog>
         </div>
     )
 }
