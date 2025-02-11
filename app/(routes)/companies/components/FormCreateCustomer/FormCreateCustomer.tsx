@@ -17,6 +17,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { FormCreateCustomerProps } from "./FormCreateCustomer.types"
 import { useState } from "react"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 const formSchema = z.object({
     name: z.string(),
@@ -62,6 +63,30 @@ export function FormCreateCustomer(props: FormCreateCustomerProps) {
                                     <FormControl>
                                         <Input placeholder="Company name..." type="text" {...field} />
                                     </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="country"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Country</FormLabel>
+                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                        <FormControl>
+                                            <SelectTrigger>
+                                                <SelectValue placeholder="Select the country" />
+                                            </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent>
+                                            <SelectItem value="spain">Spain</SelectItem>
+                                            <SelectItem value="united-kingdom">United Kingdom</SelectItem>
+                                            <SelectItem value="portugal">Portugal</SelectItem>
+                                            <SelectItem value="germany">Germany</SelectItem>
+                                            <SelectItem value="france">France</SelectItem>
+                                        </SelectContent>
+                                    </Select>
                                     <FormMessage />
                                 </FormItem>
                             )}
