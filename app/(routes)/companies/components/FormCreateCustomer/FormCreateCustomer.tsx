@@ -18,6 +18,7 @@ import { Input } from "@/components/ui/input"
 import { FormCreateCustomerProps } from "./FormCreateCustomer.types"
 import { useState } from "react"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { UploadButton } from "@/utils/uploadthing"
 
 const formSchema = z.object({
     name: z.string(),
@@ -137,7 +138,14 @@ export function FormCreateCustomer(props: FormCreateCustomerProps) {
                                 <FormItem>
                                     <FormLabel>Profile Image</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="Your company CIF" type="text" {...field} />
+                                        <UploadButton className="bg-slate-600/20 text-slate-800 rounded-lg outline-dotted outline-3" endpoint="profileImage" onClientUploadComplete={(res) => {
+                                            form.setValue("profileImage", res?.[0].url)
+                                            setPhotoUploaded(true)
+                                        }}
+                                            onUploadError={(error: Error) => {
+                                                console.log("error image");
+                                            }}
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
