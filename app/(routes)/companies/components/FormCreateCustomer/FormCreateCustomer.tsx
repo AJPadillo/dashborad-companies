@@ -138,14 +138,19 @@ export function FormCreateCustomer(props: FormCreateCustomerProps) {
                                 <FormItem>
                                     <FormLabel>Profile Image</FormLabel>
                                     <FormControl>
-                                        <UploadButton className="bg-slate-600/20 text-slate-800 rounded-lg outline-dotted outline-3" endpoint="profileImage" onClientUploadComplete={(res) => {
-                                            form.setValue("profileImage", res?.[0].url)
-                                            setPhotoUploaded(true)
-                                        }}
-                                            onUploadError={(error: Error) => {
-                                                console.log("error image");
+                                        {photoUploaded ? (
+                                            <p className="text-sm">Image uploaded!</p>
+                                        ) : (
+                                            <UploadButton className="bg-slate-600/20 text-slate-800 rounded-lg outline-dotted outline-3" endpoint="profileImage" onClientUploadComplete={(res) => {
+                                                form.setValue("profileImage", res?.[0].url)
+                                                setPhotoUploaded(true)
                                             }}
-                                        />
+                                                onUploadError={(error: Error) => {
+                                                    console.log("error image");
+                                                }}
+                                            />
+                                        )}
+
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
