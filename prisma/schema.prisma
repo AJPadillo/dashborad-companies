@@ -50,3 +50,19 @@ model Contact {
 
   @@index([companyId])
 }
+
+model Event {
+  id         String   @id @default(uuid())
+  companyId  String
+  title      String
+  start      DateTime
+  allDay     Boolean
+  timeFormat String
+
+  company Company @relation(fields: [companyId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([companyId])
+}
