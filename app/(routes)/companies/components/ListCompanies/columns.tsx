@@ -26,8 +26,12 @@ export const columns: ColumnDef<Company>[] = [
         }
     },
     {
-        accessorKey: "email",
-        header: "Email",
+        accessorKey: "name",
+        header: ({ column }) => {
+            return (
+                <Button variant="ghost" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>Company name <ArrowUpDown className="w-4 h-4 ml-2" /></Button>
+            )
+        },
     },
     {
         accessorKey: "amount",
