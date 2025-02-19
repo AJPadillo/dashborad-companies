@@ -14,8 +14,16 @@ import Image from "next/image"
 
 export const columns: ColumnDef<Company>[] = [
     {
-        accessorKey: "status",
-        header: "Status",
+        accessorKey: "profileImage",
+        header: "Profile Image",
+        cell: ({ row }) => {
+            const image = row.getValue("profileImage")
+            return (
+                <div className="px-3">
+                    <Image src={typeof image === "string" ? image : "/images/company-icon.png"} width={40} height={40} alt="Image" className="h-auto w-auto" />
+                </div>
+            )
+        }
     },
     {
         accessorKey: "email",
