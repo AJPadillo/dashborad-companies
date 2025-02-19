@@ -42,4 +42,14 @@ export function DataTable<TData, TValue>({
             columnFilters
         }
     })
+
+    if (!isMounted) return null
+
+    return (
+        <div className="p-4 bg-background shadow-md rounded-lg mt-4">
+            <div className="flex items-center mb-2">
+                <Input placeholder="Filter the company..." value={(table.getColumn("name")?.getFilterValue() as string) ?? ""} onChange={(event) => table.getColumn("name")?.setFilterValue(event.target.value)} />
+            </div>
+        </div>
+    )
 }
