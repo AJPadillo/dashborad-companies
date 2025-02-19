@@ -34,7 +34,20 @@ export const columns: ColumnDef<Company>[] = [
         },
     },
     {
-        accessorKey: "amount",
-        header: "Amount",
+        accessorKey: "cif",
+        header: "CIF",
     },
+    {
+        accessorKey: "phone",
+        header: "Phone",
+    },
+    {
+        accessorKey: "country",
+        header: "Country",
+    },
+    {
+        accessorKey: "website",
+        header: "Website",
+    },
+    
 ]
