@@ -49,5 +49,29 @@ export const columns: ColumnDef<Company>[] = [
         accessorKey: "website",
         header: "Website",
     },
-    
+    {
+        id: "actions",
+        header: "Actions",
+        cell: ({ row }) => {
+            const { id } = row.original
+            return (
+                <DropdownMenu>
+                    <DropdownMenuTrigger>
+                        <Button variant="ghost" className="w-8 h-4 p-0">
+                            <span className="sr-only">Open Menu</span>
+                            <MoreHorizontal className="w-4 h-4" />
+                        </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end">
+                        <Link href={"/company/${id}"}>
+                            <DropdownMenuItem>
+                                <Pencil className="w-4 h-4 mr-2" />
+                                Edit
+                            </DropdownMenuItem>
+                        </Link>
+                    </DropdownMenuContent>
+                </DropdownMenu>
+            )
+        }
+    },
 ]
