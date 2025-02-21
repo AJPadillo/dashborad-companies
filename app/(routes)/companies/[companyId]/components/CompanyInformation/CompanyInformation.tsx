@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { CompanyInformationProps } from "./CompanyInformation.types";
+import { User } from "lucide-react";
 
 export function CompanyInformation(props: CompanyInformationProps) {
     const { company } = props
@@ -13,7 +14,18 @@ export function CompanyInformation(props: CompanyInformationProps) {
                     <p>Company form</p>
                 </div>
             </div>
-            CompanyInformation
+            <div className="rounded-lg bg-background shadow-md hover:shadow-lg p-4 h-min" >
+                <div className="flex justify-between items-center gap-x-2">
+                    <div className="flex items-center gap-x-2">
+                        <User className="w-5 h-5" />
+                        Contacts
+                    </div>
+                    <div>
+                        {/*}TODO: New contact*/}
+                        <p>New contact</p>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
