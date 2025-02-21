@@ -27,7 +27,7 @@ export default async function CompanyIdPage({ params }: { params: { companyId: s
     return (
         <div>
             <Header />
-            <CompanyInformation />
+            <CompanyInformation company={company} />
             <p>Footer Company</p>
         </div>
     )
