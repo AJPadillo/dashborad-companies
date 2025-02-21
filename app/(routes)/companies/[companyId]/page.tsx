@@ -2,6 +2,8 @@ import { db } from "@/lib/db"
 import { auth } from "@clerk/nextjs"
 import { redirect } from "next/navigation"
 
+import { Header } from "./components/Header"
+
 export default async function CompanyIdPage({ params }: { params: { companyId: string } }) {
     const { userId } = auth()
     if (!userId) {
@@ -21,12 +23,9 @@ export default async function CompanyIdPage({ params }: { params: { companyId: s
         return redirect("/")
     }
 
-    console.log(company);
-
-
     return (
         <div>
-            <p>Header</p>
+            <Header />
             <p>Company Information</p>
             <p>Footer Company</p>
         </div>
