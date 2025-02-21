@@ -21,7 +21,14 @@ export default async function CompanyIdPage({ params }: { params: { companyId: s
         return redirect("/")
     }
 
+    console.log(company);
+
+
     return (
-        <div>Page</div>
+        <div>
+            <p>Header</p>
+            <p>Company Information</p>
+            <p>Footer Company</p>
+        </div>
     )
 }
