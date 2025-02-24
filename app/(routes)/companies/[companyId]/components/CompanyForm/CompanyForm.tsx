@@ -15,6 +15,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Input } from "@/components/ui/input"
 import { Toast } from "@/components/ui/toast"
 
+import { UploadButton } from "@/utils/uploadthing"
+
 import { CompanyFormProps } from "./CompanyForm.types"
 
 export function CompanyForm(props: CompanyFormProps) {
