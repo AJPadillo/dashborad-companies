@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { CompanyFormProps } from "./CompanyForm.types"
 
 export function CompanyForm(props: CompanyFormProps) {
+    const { company } = props
     return (
         <div>CompanyForm</div>
     )

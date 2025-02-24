@@ -11,7 +11,7 @@ export function CompanyInformation(props: CompanyInformationProps) {
             <div className="rounded-lg bg-background shadow-md hover:shadow-lg p-4">
                 <div>
                     <Image src={company.profileImage} alt="Company Image" width={50} height={50} className="rounded-lg mb-3" />
-                    <CompanyForm />
+                    <CompanyForm company={company} />
                 </div>
             </div>
             <div className="rounded-lg bg-background shadow-md hover:shadow-lg p-4 h-min" >
