@@ -18,9 +18,26 @@ import { Toast } from "@/components/ui/toast"
 import { UploadButton } from "@/utils/uploadthing"
 
 import { CompanyFormProps } from "./CompanyForm.types"
+import { formSchema } from "./CompanyForm.form"
 
 export function CompanyForm(props: CompanyFormProps) {
     const { company } = props
+    const router = useRouter()
+
+    const [photoUploaded, setPhotoUploaded] = useState(false)
+
+    const form = useForm<z.infer<typeof formSchema>>({
+        resolver: zodResolver(formSchema),
+        defaultValues: {
+            name: company.name,
+            description: company.description,
+            country: company.country,
+            website: company.website,
+            phone: company.phone,
+            cif: company.cif,
+            profileImage: company.profileImage
+        }
+    })
     return (
         <div>CompanyForm</div>
     )
