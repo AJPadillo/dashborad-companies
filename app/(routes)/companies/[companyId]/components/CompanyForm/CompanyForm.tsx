@@ -38,7 +38,25 @@ export function CompanyForm(props: CompanyFormProps) {
             profileImage: company.profileImage
         }
     })
+
+    const onSubmit = async (values: z.infer<typeof formSchema>) => {
+        console.log("on submit");
+
+    }
     return (
-        <div>CompanyForm</div>
+        <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                <div className="grid grid-cols-2 gap-3">
+                    <FormField control={form.control} name="name" render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Company name</FormLabel>
+                            <FormControl>
+                                <Input placeholder="Company name..." type="text" {...field} />
+                            </FormControl>
+                        </FormItem>
+                    )} />
+                </div>
+            </form>
+        </Form>
     )
 }
