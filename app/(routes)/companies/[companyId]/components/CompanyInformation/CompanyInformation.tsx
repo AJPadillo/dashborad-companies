@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { CompanyInformationProps } from "./CompanyInformation.types";
 import { User } from "lucide-react";
+import { CompanyForm } from "../CompanyForm";
 
 export function CompanyInformation(props: CompanyInformationProps) {
     const { company } = props
@@ -10,8 +11,7 @@ export function CompanyInformation(props: CompanyInformationProps) {
             <div className="rounded-lg bg-background shadow-md hover:shadow-lg p-4">
                 <div>
                     <Image src={company.profileImage} alt="Company Image" width={50} height={50} className="rounded-lg mb-3" />
-                    {/*TODO: Company FORM */}
-                    <p>Company form</p>
+                    <CompanyForm />
                 </div>
             </div>
             <div className="rounded-lg bg-background shadow-md hover:shadow-lg p-4 h-min" >
