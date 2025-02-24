@@ -55,6 +55,26 @@ export function CompanyForm(props: CompanyFormProps) {
                             </FormControl>
                         </FormItem>
                     )} />
+                    <FormField control={form.control} name="country" render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Country</FormLabel>
+                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                <FormControl>
+                                    <SelectTrigger>
+                                        <SelectValue placeholder="Select country" />
+                                    </SelectTrigger>
+                                </FormControl>
+                                <SelectContent>
+                                    <SelectItem value="spain">Spain</SelectItem>
+                                    <SelectItem value="united-kingdom">United Kingdom</SelectItem>
+                                    <SelectItem value="portugal">Portugal</SelectItem>
+                                    <SelectItem value="germany">Germany</SelectItem>
+                                    <SelectItem value="france">France</SelectItem>
+                                </SelectContent>
+                            </Select>
+                            <FormMessage />
+                        </FormItem>
+                    )} />
                 </div>
             </form>
         </Form>
