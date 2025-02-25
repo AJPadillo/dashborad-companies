@@ -40,8 +40,7 @@ export function CompanyForm(props: CompanyFormProps) {
     })
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        console.log("on submit");
-
+        
     }
     return (
         <Form {...form}>
@@ -133,6 +132,7 @@ export function CompanyForm(props: CompanyFormProps) {
                         </FormItem>
                     )} />
                 </div>
+                <Button type="submit">Edit company</Button>
             </form>
         </Form>
     )
