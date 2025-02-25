@@ -93,6 +93,15 @@ export function CompanyForm(props: CompanyFormProps) {
                             <FormMessage />
                         </FormItem>
                     )} />
+                    <FormField control={form.control} name="cif" render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>CIF / NIF</FormLabel>
+                            <FormControl>
+                                <Input placeholder="B1234567" type="text" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )} />
                 </div>
             </form>
         </Form>
