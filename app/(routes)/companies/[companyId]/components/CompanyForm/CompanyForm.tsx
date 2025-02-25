@@ -75,6 +75,16 @@ export function CompanyForm(props: CompanyFormProps) {
                             <FormMessage />
                         </FormItem>
                     )} />
+                    <FormField control={form.control} name="website" render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Website</FormLabel>
+                            <FormControl>
+                                <Input placeholder="www.example.com" type="text" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )} />
+                    
                 </div>
             </form>
         </Form>
