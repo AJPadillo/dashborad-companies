@@ -123,6 +123,15 @@ export function CompanyForm(props: CompanyFormProps) {
                             <FormMessage />
                         </FormItem>
                     )} />
+                    <FormField control={form.control} name="description" render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Company Description</FormLabel>
+                            <FormControl>
+                                <Textarea placeholder="Description..." {...field} value={form.getValues().description ?? ''} />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )} />
                 </div>
             </form>
         </Form>
