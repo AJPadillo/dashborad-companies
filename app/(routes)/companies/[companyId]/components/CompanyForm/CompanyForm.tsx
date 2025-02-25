@@ -102,6 +102,27 @@ export function CompanyForm(props: CompanyFormProps) {
                             <FormMessage />
                         </FormItem>
                     )} />
+                    <FormField control={form.control} name="profileImage" render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Profile Image</FormLabel>
+                            <FormControl>
+                                <div>
+                                    {photoUploaded ? (
+                                        <p className="text-sm">Image uploaded!</p>
+                                    ) : (
+                                        <UploadButton className="bg-slate-600/20 text-slate-800 rounded-lg outline-dotted outline-3" {...field} endpoint="profileImage" onClientUploadComplete={(res) => {
+                                            form.setValue("profileImage", res?.[0].url); setPhotoUploaded(true)
+                                        }}
+                                            onUploadError={(error: Error) => {
+                                                Toast({ title: "Error uploading photo" })
+                                            }}
+                                        />
+                                    )}
+                                </div>
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )} />
                 </div>
             </form>
         </Form>
