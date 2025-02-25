@@ -14,6 +14,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 
 import { Input } from "@/components/ui/input"
 import { Toast } from "@/components/ui/toast"
+import { toast } from "@/hooks/use-toast"
 
 import { UploadButton } from "@/utils/uploadthing"
 
@@ -40,7 +41,18 @@ export function CompanyForm(props: CompanyFormProps) {
     })
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        
+        try {
+            await axios.patch('/api/company/${company.id}', values)
+            toast({
+                title: "Company updated"
+            })
+            router.refresh()
+        } catch (error) {
+            toast({
+                title: "Something went wrong",
+                variant: "destructive"
+            })
+        }
     }
     return (
         <Form {...form}>
@@ -113,7 +125,7 @@ export function CompanyForm(props: CompanyFormProps) {
                                             form.setValue("profileImage", res?.[0].url); setPhotoUploaded(true)
                                         }}
                                             onUploadError={(error: Error) => {
-                                                Toast({ title: "Error uploading photo" })
+                                                toast({ title: "Error uploading photo" })
                                             }}
                                         />
                                     )}
