@@ -84,7 +84,15 @@ export function CompanyForm(props: CompanyFormProps) {
                             <FormMessage />
                         </FormItem>
                     )} />
-                    
+                    <FormField control={form.control} name="phone" render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Phone</FormLabel>
+                            <FormControl>
+                                <Input placeholder="+34 612 123 123" type="number" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )} />
                 </div>
             </form>
         </Form>
