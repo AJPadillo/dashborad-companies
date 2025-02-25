@@ -22,11 +22,10 @@ export function CompanyInformation(props: CompanyInformationProps) {
                         Contacts
                     </div>
                     <div>
-
-                        <p>New contact</p>
+                        <NewContact />
                     </div>
                 </div>
-                <NewContact />
+                <p>List contacts...</p>
             </div>
         </div>
     )
