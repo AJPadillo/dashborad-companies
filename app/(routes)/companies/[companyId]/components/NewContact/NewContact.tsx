@@ -12,6 +12,15 @@ export function NewContact() {
             <DialogTrigger asChild>
                 <Button>Add new contact</Button>
             </DialogTrigger>
+            <DialogContent className="sm:max-w-[625px]">
+                <DialogHeader>
+                    <DialogTitle> Add new contact</DialogTitle>
+                    <DialogDescription>
+                        Create your contacts to manage them later.
+                    </DialogDescription>
+                </DialogHeader>
+                <p>Form Contact</p>
+            </DialogContent>
         </Dialog>
     )
 }
