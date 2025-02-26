@@ -4,6 +4,7 @@ import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { FormContact } from "./FormContact"
 
 export function NewContact() {
     const [open, setOpen] = useState(false)
@@ -19,7 +20,7 @@ export function NewContact() {
                         Create your contacts to manage them later.
                     </DialogDescription>
                 </DialogHeader>
-                <p>Form Contact</p>
+                <FormContact setOpen={setOpen} />
             </DialogContent>
         </Dialog>
     )
