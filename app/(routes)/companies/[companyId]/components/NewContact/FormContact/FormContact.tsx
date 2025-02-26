@@ -30,7 +30,24 @@ export function FormContact(props: FormContactProps) {
             phone: "",
         }
     })
+
+    const onSubmit = async (values: z.infer<typeof formSchema>) => {
+        console.log("on submit");
+
+    }
     return (
-        <div>FormContact</div>
+        <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="md:grid-cols-2 grid gap-4">
+                <FormField control={form.control} name="name" render={({ field }) => (
+                    <FormItem>
+                        <FormLabel>Name</FormLabel>
+                        <FormControl>
+                            <Input placeholder="Contact name" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                )} />
+            </form>
+        </Form>
     )
 }
