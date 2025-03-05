@@ -47,7 +47,7 @@ export function FormContact(props: FormContactProps) {
                         <FormMessage />
                     </FormItem>
                 )} />
-                 <FormField control={form.control} name="email" render={({ field }) => (
+                <FormField control={form.control} name="email" render={({ field }) => (
                     <FormItem>
                         <FormLabel>Email</FormLabel>
                         <FormControl>
@@ -63,6 +63,26 @@ export function FormContact(props: FormContactProps) {
                             <Input placeholder="+34 612 34 56 78" {...field} />
                         </FormControl>
                         <FormMessage />
+                    </FormItem>
+                )} />
+                <FormField control={form.control} name="role" render={({ field }) => (
+                    <FormItem>
+                        <FormLabel>Role</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                                <SelectTrigger>
+                                    <SelectValue placeholder="Select the role" />
+                                </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                                <SelectItem value="Comercial">Comercial</SelectItem>
+                                <SelectItem value="CEO">CEO</SelectItem>
+                                <SelectItem value="Quality">Customer Service</SelectItem>
+                                <SelectItem value="Analytics">Analytics</SelectItem>
+                                <SelectItem value="Other">Other...</SelectItem>
+                            </SelectContent>
+                            <FormMessage />
+                        </Select>
                     </FormItem>
                 )} />
             </form>
