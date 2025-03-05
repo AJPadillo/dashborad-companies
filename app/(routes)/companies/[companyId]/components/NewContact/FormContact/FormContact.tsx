@@ -56,6 +56,15 @@ export function FormContact(props: FormContactProps) {
                         <FormMessage />
                     </FormItem>
                 )} />
+                <FormField control={form.control} name="phone" render={({ field }) => (
+                    <FormItem>
+                        <FormLabel>Phone</FormLabel>
+                        <FormControl>
+                            <Input placeholder="+34 612 34 56 78" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                )} />
             </form>
         </Form>
     )
