@@ -85,6 +85,8 @@ export function FormContact(props: FormContactProps) {
                         </Select>
                     </FormItem>
                 )} />
+
+                <Button type="submit">Save contact</Button>
             </form>
         </Form>
     )
