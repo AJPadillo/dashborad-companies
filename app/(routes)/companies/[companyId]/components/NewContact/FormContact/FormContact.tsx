@@ -47,6 +47,15 @@ export function FormContact(props: FormContactProps) {
                         <FormMessage />
                     </FormItem>
                 )} />
+                 <FormField control={form.control} name="email" render={({ field }) => (
+                    <FormItem>
+                        <FormLabel>Email</FormLabel>
+                        <FormControl>
+                            <Input placeholder="email@example.com" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                )} />
             </form>
         </Form>
     )
