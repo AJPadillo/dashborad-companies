@@ -37,6 +37,17 @@ export async function ListContacts(props: ListContactsProps) {
                 <p className="text-right">Contact</p>
             </div>
 
+            {contacts.map((contact) => (
+                <div key={contact.id}>
+                    <div className="grid grid-cols-3 gap-x-3 items-center justify-between px-4">
+                        <p>{contact.name}</p>
+                        <p>{contact.role}</p>
+                        <div className="flex items-center gap-x-6 justify-end">
+                            <a href={`telto: ${contact.phone}`} target="_blank"><Phone className="w-4 h-4" /></a>
+                        </div>
+                    </div>
+                </div>
+            ))}
         </div>
     )
 }
