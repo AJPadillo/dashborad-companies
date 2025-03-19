@@ -47,6 +47,7 @@ export async function ListContacts(props: ListContactsProps) {
                             <a href={`mailto: ${contact.email}`} target="_blank"><Mail className="w-4 h-4" /></a>
                         </div>
                     </div>
+                    <Separator className="my-3" />
                 </div>
             ))}
         </div>
