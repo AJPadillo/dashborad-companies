@@ -25,7 +25,18 @@ export async function ListContacts(props: ListContactsProps) {
         }
     })
 
+    if (contacts.length === 0) {
+        return <p>Actualmente no dispones de ningun contacto</p>
+    }
+
     return (
-        <div>ListContacts</div>
+        <div>
+            <div className="mt-4 mb-2 grid grid-cols-3 p-2 gap-x-3 items-center justify-between px-4 bg-slate-400/20 rounded-lg">
+                <p>Name</p>
+                <p>Role</p>
+                <p className="text-right">Contact</p>
+            </div>
+
+        </div>
     )
 }
