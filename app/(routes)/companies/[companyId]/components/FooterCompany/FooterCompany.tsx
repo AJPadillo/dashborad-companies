@@ -17,6 +17,10 @@ export function FooterCompany(props: FooterCompanyProps) {
         console.log("delete company");
     }
     return (
-        <div></div>
+        <div className="flex justify-end mt-5">
+            <Button variant="destructive" onClick={onDeleteCompany}>
+                <Trash className="h-4 w-4 mr-2" />Remove company
+            </Button>
+        </div>
     )
 }
