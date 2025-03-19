@@ -11,7 +11,12 @@ import { FooterCompanyProps } from "./FooterCompany.types";
 
 export function FooterCompany(props: FooterCompanyProps) {
     const { companyId } = props
+    const router = useRouter();
+
+    const onDeleteCompany = async () => {
+        console.log("delete company");
+    }
     return (
-        <div>FooterCompany</div>
+        <div></div>
     )
 }

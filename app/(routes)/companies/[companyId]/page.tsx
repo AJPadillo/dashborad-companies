@@ -4,6 +4,7 @@ import { redirect } from "next/navigation"
 
 import { Header } from "./components/Header"
 import { CompanyInformation } from "./components/CompanyInformation"
+import { FooterCompany } from "./components/FooterCompany"
 
 export default async function CompanyIdPage({ params }: { params: { companyId: string } }) {
     const { userId } = auth()
@@ -28,7 +29,7 @@ export default async function CompanyIdPage({ params }: { params: { companyId: s
         <div>
             <Header />
             <CompanyInformation company={company} />
-            <p>Footer Company</p>
+            <FooterCompany companyId={company.id} />
         </div>
     )
 }
