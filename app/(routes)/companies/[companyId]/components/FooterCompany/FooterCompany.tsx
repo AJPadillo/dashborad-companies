@@ -8,13 +8,25 @@ import { Trash } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import { FooterCompanyProps } from "./FooterCompany.types";
+import { toast } from "@/hooks/use-toast";
 
 export function FooterCompany(props: FooterCompanyProps) {
     const { companyId } = props
     const router = useRouter();
 
     const onDeleteCompany = async () => {
-        console.log("delete company");
+        try {
+            axios.delete(`/api/company/${companyId}`)
+            toast({
+                title: "Company deleted"
+            })
+            router.push("/companies")
+        } catch (error) {
+            toast({
+                title: "Something went wrong",
+                variant: "destructive"
+            })
+        }
     }
     return (
         <div className="flex justify-end mt-5">
