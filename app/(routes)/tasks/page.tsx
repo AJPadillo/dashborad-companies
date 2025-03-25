@@ -2,6 +2,7 @@ import { auth } from "@clerk/nextjs"
 
 import { redirect } from "next/navigation"
 import { db } from "@/lib/db"
+import { Calendar } from "./components/Calendar";
 
 //import { Calendar } from "-/components/Calendar"
 
@@ -30,6 +31,8 @@ export default async function TasksPage() {
     console.log(events);
 
     return (
-        <div>page</div>
+        <div>
+            <Calendar />
+        </div>
     )
 }
