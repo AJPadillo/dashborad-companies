@@ -32,7 +32,7 @@ export default async function TasksPage() {
 
     return (
         <div>
-            <Calendar />
+            <Calendar companies={companies} events={events} />
         </div>
     )
 }
