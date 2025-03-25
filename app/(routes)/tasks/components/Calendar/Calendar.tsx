@@ -32,7 +32,10 @@ export function Calendar(props: CalendarProps) {
         }
     })
 
-
+    const handleDateClick = async (selected: DateSelectArg) => {
+        setOpen(true)
+        setSelectedItem(selected)
+    }
     return (
         <div>Calendar</div>
     )
