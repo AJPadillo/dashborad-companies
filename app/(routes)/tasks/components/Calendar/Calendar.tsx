@@ -20,6 +20,19 @@ import { CalendarProps } from "./Calendar.types";
 
 export function Calendar(props: CalendarProps) {
     const { companies, events } = props
+    const router = useRouter()
+    const [open, setOpen] = useState(false)
+    const [onSaveNewEvent, setOnSaveNewEvent] = useState(false)
+    const [selectedItem, setSelectedItem] = useState<DateSelectArg>()
+    const [newEvent, setNewEvent] = useState({
+        eventName: "",
+        companieSelected: {
+            name: "",
+            id: ""
+        }
+    })
+
+
     return (
         <div>Calendar</div>
     )
